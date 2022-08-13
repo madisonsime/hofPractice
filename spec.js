@@ -299,8 +299,10 @@
           });
           it('should return a new array with all items possessing a glutenFree status', function() {
             var data = glutenFree(testDesserts);
+            console.log('data', data);
             var allHaveGlutenFreeProperty = true;
             data.forEach(function(dessert) {
+              console.log('test', dessert);
               if (!dessert.hasOwnProperty('glutenFree')) {
                 allHaveGlutenFreeProperty = false;
               }
@@ -333,6 +335,7 @@
           });
           it('should return array of items with sale prices', function() {
             var data = applyCoupon(testGrocery, 0.20);
+            console.log(data[10]);
             expect(data[10].salePrice).to.equal('$4.47');
           });
           it('items in array should have added salePrice property', function() {
